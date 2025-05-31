@@ -12,3 +12,6 @@
 
 ## Ручное тестирование
 Ручное тестирования главной страницы [main_page.docx](manual_testing/main_page.docx)
+
+## Автоматизированное тестирование
+Автоматизированное тестирования главной страницы [test_index.py](auto_testing/tests/test_index.py)
