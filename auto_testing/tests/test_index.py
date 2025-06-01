@@ -18,7 +18,6 @@ def driver():
 def test_laravel_login_and_navigation(driver):
     # 1. Авторизация
     driver.get("https://svetlanadracheva.ru/login")
-    time.sleep(1)
 
     driver.find_element(By.NAME, "identity").send_keys("cj@cj.com")
     driver.find_element(By.NAME, "password").send_keys("cj")
@@ -36,7 +35,6 @@ def test_laravel_login_and_navigation(driver):
     for href in hrefs:
         driver.get(href)
         print(f"Перешли по ссылке: {href}")
-        time.sleep(2)
         assert href in driver.current_url or driver.current_url.startswith(href)
 
     # 4. Переход на главную через логотип
@@ -44,7 +42,6 @@ def test_laravel_login_and_navigation(driver):
         EC.element_to_be_clickable((By.XPATH, "//a[h4[contains(text(), 'Название')]]"))
     )
     logo_link.click()
-    time.sleep(2)
 
     # 5. Ждём загрузку календаря
     WebDriverWait(driver, 10).until(
@@ -59,7 +56,6 @@ def test_laravel_login_and_navigation(driver):
         event_href = event.get_attribute("href")
         print(f"Клик по событию: {event_href}")
         event.click()
-        time.sleep(2)
     except:
         print("Событие в календаре не найдено — продолжаем")
 
@@ -68,7 +64,6 @@ def test_laravel_login_and_navigation(driver):
         EC.element_to_be_clickable((By.XPATH, "//a[h4[contains(text(), 'Название')]]"))
     )
     logo_link.click()
-    time.sleep(2)
 
     # 8. Повторно ждём загрузку календаря
     WebDriverWait(driver, 10).until(
@@ -82,4 +77,3 @@ def test_laravel_login_and_navigation(driver):
         )
         next_button.click()
         print(f"Клик по переключателю месяца №{i + 1}")
-        time.sleep(2)
