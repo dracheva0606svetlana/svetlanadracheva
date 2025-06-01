@@ -9,3 +9,6 @@
 
 ## Чек-лист
 Чек-лист тестирования главной страницы [main_page.md](checklist/main_page.md)
+
+## Ручное тестирование
+Ручное тестирования главной страницы [main_page.docx](manual_testing/main_page.docx)
